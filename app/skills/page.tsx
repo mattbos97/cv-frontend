@@ -1,10 +1,10 @@
 
 const skills = [
-    { title: "C#"},
-    { title: "JavaScript"},
-    { title: "HTML"},
-    { title: "CSS"},
-    { title: "Tailwind CSS"}
+    { title: "C#", level: "expert"},
+    { title: "JavaScript", level: "intermediate"},
+    { title: "HTML", level: "intermediate"},
+    { title: "CSS", level: "intermediate"},
+    { title: "Tailwind CSS", level: "intermediate"}
 ];
 
 export default function Page(){
@@ -15,6 +15,7 @@ export default function Page(){
                 return(
                     <div key={skill.title}>
                         <h2>{skill.title}</h2>
+                        <p>{skill.level}</p>
                     </div>
                 );
             })}
