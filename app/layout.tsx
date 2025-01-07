@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/app/ui/SideBar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import {notoSansMono} from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
   title: "Matt Bos",
@@ -26,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex h-screen w-screen`}
+        className={`${notoSansMono.className} antialiased flex h-screen w-screen bg-dark-primary text-white`}
       >
       <SideBar/>
         {children}
