@@ -1,0 +1,11 @@
+I was responsible for designing and implementing software solutions while ensuring the code remained readable, maintainable, and testable. As part of a team of six engineers, I contributed to the development of three major software applications, primarily used by test engineers and electrical engineers within the company.
+
+I have an intermediate understanding of C# and .NET Core, with a strong emphasis on object-oriented design principles and unit testing. Beyond coding, I took the initiative to update and improve existing documentation, ensuring it adhered to modern standards. I also spearheaded the creation and maintenance of an internal documentation website, which streamlined access to updated resources and encouraged better documentation practices among software engineers.
+
+Achievements:
+
+Automated Test Generation Systems:
+Designed software for automated product test generation, focusing on enhancing reliability and reducing setup time. Leveraging JTAG-enabled devices as digital I/Os, I minimized the need for mechanical probes in testing systems, significantly cutting production costs and improving durability. This innovation streamlined test creation for engineers, enabling faster product development cycles.
+
+3-Phase Motor Emulator:
+Designed and developed a 3-phase motor emulator to replace high-maintenance motors used for internal testing. By reverse engineering encoder communication protocols and motor control unit behaviors, I created a solution that eliminated the need for physical motors, saving the company approximately €23,000 annually
