@@ -1,4 +1,6 @@
-import Link from "next/link";
+'use client'
+import LinkButton from "@/app/ui/LinkButton";
+import {usePathname} from "next/navigation";
 
 const links = [
     {name: "Home", href: "/"},
@@ -9,17 +11,19 @@ const links = [
 ];
 
 export default function SideBar(){
+
+    const path = usePathname();
+
     return(
-        <nav className={"w-64 flex items-center flex-col bg-dark-primary"}>
+        <nav className={"w-64 flex flex-col items-center space-y-4 p-8 bg-dark-primary"}>
             {links.map((link) => {
                 return(
-                    <Link
-                        className={"border-dotted border-white border-2 rounded-full w-48 flex justify-center"}
+                    <LinkButton
                         key={link.name}
+                        text={link.name}
                         href={link.href}
-                    >
-                        {link.name}
-                    </Link>
+                        type={path === link.href ? 'secondary' : 'primary'}
+                    />
                 );
             })}
         </nav>
