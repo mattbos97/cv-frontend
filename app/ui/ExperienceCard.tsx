@@ -9,11 +9,11 @@ export interface Experience{
 
 export default function ExperienceCard({exp} :{exp: Experience}){
     return(
-        <div>
-            <h3>{exp.jobTitle}</h3>
-            <h4>{exp.company}</h4>
+        <div className={"border-dark-secondary p-8"}>
+            <h2>{exp.jobTitle}</h2>
+            <h3>{exp.company}</h3>
             <p>{exp.startDate} - {exp.endDate}</p>
-            <p>{exp.description}</p>
+            <p className={"py-4"}>{exp.description}</p>
         </div>
     );
 }

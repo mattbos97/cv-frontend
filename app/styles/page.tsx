@@ -1,4 +1,4 @@
-import LinkButton from "@/app/ui/LinkButton";
+import {LinkButton} from "@/app/ui/LinkButton";
 
 const colors = [
     {type: "primary background", color: "bg-dark-primary", code: "000000"},
@@ -14,7 +14,7 @@ export default function Page(){
             <div className={"flex flex-col items-center space-y-4"}>
                 <h1 className={"underline underline-offset-8"}>Colors</h1>
                 {colors.map((color) => {
-                    return(
+                    return (
                         <div key={color.type} className={'flex flex-row items-center space-x-4'}>
                             <div className={`w-24 h-24 border-white border-2 rounded-md ${color.color}`}/>
                             <p>#{color.code}</p>
@@ -24,8 +24,7 @@ export default function Page(){
             </div>
             <div className={"flex flex-col items-center space-y-4"}>
                 <h1 className={"underline underline-offset-8"}>Buttons</h1>
-                <LinkButton text={"Primary"} href={"/styles"} type={"primary"}/>
-                <LinkButton text={"Secondary"} href={"/styles"} type={"secondary"}/>
+                <LinkButton parameters={{text: 'primary', href:'/styles'}}/>
             </div>
             <div>
             </div>
