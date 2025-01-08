@@ -16,10 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansMono.className} antialiased flex h-screen w-screen bg-dark-secondary text-white`}
+        className={`${notoSansMono.className} antialiased flex h-screen w-full bg-dark-primary text-white`}
       >
       <SideBar/>
-        {children}
+        <main className={"flex flex-1"}>{children}</main>
       </body>
     </html>
   );

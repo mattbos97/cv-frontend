@@ -9,7 +9,7 @@ const skills = [
 
 export default function Page(){
     return(
-        <main className={"flex flex-1 flex-col"}>
+        <main className={"flex flex-col"}>
             <h1>Skills</h1>
             {skills.map((skill) => {
                 return(

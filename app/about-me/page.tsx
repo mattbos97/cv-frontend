@@ -1,6 +1,6 @@
 export default function Page(){
     return(
-        <main className={"flex flex-col flex-1 justify-center"}>
+        <main className={"flex flex-col justify-center"}>
             <h1>About me</h1>
             <p>
                 I am Matt Bos, a 27-year-old software engineer with a passion for innovation and problem-solving.
