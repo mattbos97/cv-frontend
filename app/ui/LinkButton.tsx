@@ -1,22 +1,23 @@
+'use client'
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
-const base = "w-40 h-12 border-4 rounded-md hover:text-black hover:ease-in duration-200"
-const primary = base + " border-yellow-400 text-yellow-400 hover:bg-yellow-400";
-const secondary = base + " border-blue-500 text-blue-500 hover:bg-blue-500";
+export interface LinkButtonParams {
+    text: string,
+    href: string
+}
 
-export default function LinkButton({ href, text, type } : { text: string, href: string, type: 'primary' | 'secondary' }){
-    switch (type) {
-        case "primary":
-            return(
-                <Link href={href}>
-                    <button className={primary}>{text}</button>
-                </Link>
-            );
-        case "secondary":
-            return(
-                <Link href={href}>
-                    <button className={secondary}>{text}</button>
-                </Link>
-            );
-    }
+export function LinkButton({ parameters } : { parameters: LinkButtonParams}){
+
+    const path = usePathname();
+
+    return(
+        <Link href={parameters.href}>
+            <button className={"w-40 max-w-40 min-h-12 border-4 rounded-md border-accent-yellow " +
+                (parameters.href === path
+                    ? "text-black bg-accent-yellow "
+                    : "text-accent-yellow bg-none hover:ease-in duration-200 " +
+                    "hover:text-accent-blue hover:border-accent-blue")}>{parameters.text}</button>
+        </Link>
+    );
 }
