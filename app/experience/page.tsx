@@ -23,9 +23,9 @@ const experiences: Experience[] = [
 
 export default function Page(){
     return(
-        <main className={"flex flex-col"}>
+        <div className={"flex flex-col"}>
             <h1>Work experience</h1>
             {experiences.map((exp) => <ExperienceCard key={exp.company} exp={exp}/>)}
-        </main>
+        </div>
     );
 }
