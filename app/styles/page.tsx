@@ -1,36 +1,26 @@
-import Link from "next/link";
 import LinkButton from "@/app/ui/LinkButton";
-import ExperienceCard, {Experience} from "@/app/ui/ExperienceCard";
 
-const templateExperience: Experience = {
-    jobTitle: "Software engineer",
-    company: "Some company",
-    startDate: "Feb 2021",
-    endDate: "Dec 2024",
-    description: "Describe the job here in a long peace of text that can span mulitple lines."
-}
+const colors = [
+    {type: "primary background", color: "bg-dark-primary", code: "000000"},
+    {type: "secondary background", color: "bg-dark-secondary", code: "151515"},
+    {type: "tertiary background", color: "bg-dark-tertiary", code: "303030"},
+    {type: "primary color", color: "bg-accent-yellow", code: "facc15"},
+    {type: "secondary color", color: "bg-accent-blue", code: "3b82f6"}
+];
 
 export default function Page(){
     return(
         <main className={"w-full h-full grid grid-cols-3 p-12"}>
             <div className={"flex flex-col items-center space-y-4"}>
                 <h1 className={"underline underline-offset-8"}>Colors</h1>
-                <div>
-                    <p>Primary</p>
-                    <div className={"w-24 h-24 bg-dark-primary border-white border-2"}/>
-                </div>
-                <div>
-                    <p>Secondary</p>
-                    <div className={"w-24 h-24 bg-dark-secondary border-white border-2"}/>
-                </div>
-                <div>
-                    <p>Yellow</p>
-                    <div className={"w-24 h-24 bg-yellow-400 border-white border-2"}/>
-                </div>
-                <div>
-                    <p>Blue</p>
-                    <div className={"w-24 h-24 bg-blue-500 border-white border-2"}/>
-                </div>
+                {colors.map((color) => {
+                    return(
+                        <div key={color.type} className={'flex flex-row items-center space-x-4'}>
+                            <div className={`w-24 h-24 border-white border-2 rounded-md ${color.color}`}/>
+                            <p>#{color.code}</p>
+                        </div>
+                    );
+                })}
             </div>
             <div className={"flex flex-col items-center space-y-4"}>
                 <h1 className={"underline underline-offset-8"}>Buttons</h1>
@@ -38,11 +28,6 @@ export default function Page(){
                 <LinkButton text={"Secondary"} href={"/styles"} type={"secondary"}/>
             </div>
             <div>
-                <h1>Components</h1>
-                <div>
-                    <p>Experience card</p>
-                    <ExperienceCard exp={templateExperience}/>
-                </div>
             </div>
         </main>
     );

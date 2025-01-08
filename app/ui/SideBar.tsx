@@ -10,7 +10,7 @@ const links = [
 
 export default function SideBar(){
     return(
-        <nav className={"w-64 flex items-center flex-col bg-dark-secondary"}>
+        <nav className={"w-64 flex items-center flex-col bg-dark-primary"}>
             {links.map((link) => {
                 return(
                     <Link

@@ -10,8 +10,13 @@ export default {
     extend: {
       colors: {
         dark: {
-          primary: "#161616",
-          secondary: "#000000"
+          primary: "#000000",
+          secondary: "#151515",
+          tertiary: "#303030"
+        },
+        accent:{
+          yellow: "#facc15",
+          blue: "#3b82f6"
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
