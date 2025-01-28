@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SideBar from "@/app/ui/SideBar";
 import {notoSansMono} from "@/app/ui/fonts";
+import SideBar from "@/app/ui/SideBar";
 
 export const metadata: Metadata = {
   title: "Matt Bos",
@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`${notoSansMono.className} antialiased flex h-screen w-full bg-dark-primary text-white`}
       >
-      <SideBar/>
+      <div className={'flex items-center pl-8 pr-24'}><SideBar/></div>
         <main className={"flex flex-1"}>{children}</main>
       </body>
     </html>
