@@ -1,9 +1,10 @@
-import SkillCard from "@/app/ui/SkillCard";
+import TypeWriter from "@/app/ui/TypeWriter";
 
-export default function Creator(){
-    return(
+export default function Creator() {
+
+    return (
         <div className={'flex flex-1 justify-center items-center'}>
-            <SkillCard name={'C#'} level={'intermediate'}/>
+            <TypeWriter text={'hello, and welcome.'} cursor={true}/>
         </div>
     );
 }
