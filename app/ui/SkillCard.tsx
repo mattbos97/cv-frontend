@@ -1,7 +1,7 @@
 'use client'
 import {motion, animate, useMotionValue, useTransform} from 'motion/react'
 import React, {useEffect} from 'react'
-import TypeWriter from "@/app/ui/TypeWriter";
+import TypeWriterComponent from "@/app/ui/TypeWriter";
 
 type SkillLevel = 'beginner' | 'intermediate' | 'expert' | 'pro';
 const skillLevelToPercentage: Record<SkillLevel, number> = {

@@ -1,24 +1,12 @@
 'use client'
-import {ReactNode, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {animate, motion, useMotionValue, useTransform} from "motion/react";
 
-interface WriterProps {
+const Writer = ({text, onComplete, className}: {
     text: string,
-    className?: string,
     onComplete: () => void,
-    children?: ReactNode
-}
-
-interface CursorProps {
-    isTyping: boolean
-}
-
-interface TypeWriterProps {
-    text: string,
-    cursor: boolean
-}
-
-function Writer({text, className, onComplete}: WriterProps){
+    className: string
+}) => {
     const textIndex = useMotionValue(0)
     const textIndexRounded = useTransform(() => Math.round(textIndex.get()));
     const textSlice = useTransform(() => text.slice(0, textIndexRounded.get()));
@@ -34,13 +22,15 @@ function Writer({text, className, onComplete}: WriterProps){
     }, [textIndex, text, onComplete]);
 
     return (
-        <motion.pre className={`${className}`}>
+        <motion.div className={`${className}`}>
             {textSlice}
-        </motion.pre>
+        </motion.div>
     );
 }
 
-function Cursor({isTyping}: CursorProps) {
+const Cursor = ({isTyping}: {
+    isTyping: boolean
+}) => {
     const opacity = useMotionValue(1);
     const blink = useTransform(() => Math.round(opacity.get()));
 
@@ -65,15 +55,24 @@ function Cursor({isTyping}: CursorProps) {
     );
 }
 
-export default function TypeWriter({text, cursor} : TypeWriterProps){
+export interface TypeWriterProps {
+    text: string,
+    textColor?: 'text-white' | 'text-black' | 'text-gray-500',
+    fontSize?: 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
+    isTyping?: boolean,
+    onComplete?: () => void;
+}
 
+export const TypeWriter = ({text, textColor, fontSize}: TypeWriterProps) => {
     const [isTyping, setIsTyping] = useState(true);
     const handleTypingComplete = () => setIsTyping(false);
 
-    return(
-        <div className={'flex gap-1'}>
-            <Writer text={text} onComplete={handleTypingComplete}/>
-            {cursor && <Cursor isTyping={isTyping}/>}
+    const style = [textColor, fontSize].join(' ');
+
+    return (
+        <div>
+            <Writer text={text} onComplete={handleTypingComplete} className={style}/>
+            <Cursor isTyping={isTyping}/>
         </div>
     );
 }

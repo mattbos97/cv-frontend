@@ -1,19 +1,19 @@
 
 export interface Experience{
-    jobTitle: string,
+    title: string,
     company: string,
-    startDate: string,
-    endDate: string,
+    start: string,
+    end: string,
     description: string
 }
 
-export default function ExperienceCard({exp} :{exp: Experience}){
+export default function ExperienceCard(exp: Experience){
     return(
         <div className={"border-dark-secondary p-8"}>
-            <h2>{exp.jobTitle}</h2>
+            <h2>{exp.title}</h2>
             <h3>{exp.company}</h3>
-            <p>{exp.startDate} - {exp.endDate}</p>
-            <p className={"py-4"}>{exp.description}</p>
+            <p>{exp.start} - {exp.end}</p>
+            <p className={"py-4 whitespace-pre-wrap"}>{exp.description}</p>
         </div>
     );
 }
