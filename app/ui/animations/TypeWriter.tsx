@@ -57,7 +57,7 @@ const Cursor = ({isTyping}: {
 
 export interface TypeWriterProps {
     text: string,
-    textColor?: 'text-white' | 'text-black' | 'text-gray-500',
+    textColor?: 'text-text-primary' | 'text-text-secondary',
     fontSize?: 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
     isTyping?: boolean,
     onComplete?: () => void;

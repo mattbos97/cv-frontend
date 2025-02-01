@@ -1,4 +1,4 @@
-import {LinkButton} from "@/app/ui/LinkButton";
+import {LinkButton} from "@/app/ui/components/LinkButton";
 
 const colors = [
     {type: "primary background", color: "bg-dark-primary", code: "000000"},

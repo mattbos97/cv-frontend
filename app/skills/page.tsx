@@ -1,4 +1,4 @@
-import SkillCard, {SkillCardProps} from '@/app/ui/SkillCard';
+import SkillCard, {SkillCardProps} from '@/app/ui/components/SkillCard';
 
 const skills: SkillCardProps[] = [
     { name: 'C#', level: 'expert'},

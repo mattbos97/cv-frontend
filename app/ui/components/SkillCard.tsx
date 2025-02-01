@@ -1,7 +1,6 @@
 'use client'
 import {motion, animate, useMotionValue, useTransform} from 'motion/react'
 import React, {useEffect} from 'react'
-import TypeWriterComponent from "@/app/ui/TypeWriter";
 
 type SkillLevel = 'beginner' | 'intermediate' | 'expert' | 'pro';
 const skillLevelToPercentage: Record<SkillLevel, number> = {
@@ -18,9 +17,9 @@ export interface SkillCardProps{
 
 function ProgressBar({skillLevel}: {skillLevel: SkillLevel}) {
     return (
-        <div className={"w-full h-2 bg-gray-600 rounded-full"}>
+        <div className={"w-full h-2 bg-interactive-accent-3 rounded-full"}>
             <motion.div
-                className={"h-full rounded-full bg-gradient-to-r from-yellow-600 to-yellow-300 bg-accent-yellow"}
+                className={"h-full rounded-full bg-solid-accent-1"}
                 initial={{width: '0%'}}
                 animate={{width: `${skillLevelToPercentage[skillLevel]}%`}}
                 transition={{delay: 0.5, duration: 1, ease: 'easeOut'}}
@@ -61,12 +60,15 @@ export default function SkillCard({name, level}: SkillCardProps) {
 
     return (
         <motion.div
-            className={"bg-dark-secondary rounded-xl w-[350px] p-4 flex flex-col justify-around"}
+            className={`
+            rounded-lg border-[1px] border-border-gray-2
+            w-[350px] p-4 flex flex-col justify-around
+            `}
             whileHover={{
                 scale: 1.05,
             }}
         >
-            <span className={'text-accent-yellow text-xl pb-4'}>{name}</span>
+            <span className={'text-xl pb-4'}>{name}</span>
             <ProgressBar skillLevel={level}/>
             <SkillLevelDescription skillLevel={level}/>
         </motion.div>
