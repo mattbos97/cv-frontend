@@ -22,15 +22,17 @@ const navLinks: NavLinkProps[] = [
     { text: "Skills", href: "/skills" }
 ]
 
-const calculateGray = (indent: number) =>
-    900 - (indent * 200);
+const getGrayColor = (indent: number): string => {
+    const shades = ['text-gray-900', 'text-gray-700', 'text-gray-500']
+    return shades[indent] || 'text-gray-500';
+}
 
-function NavLink({text, href}: NavLinkProps) {
+const NavLink = ({text, href}: NavLinkProps) => {
 
     const path = usePathname();
     const isActive = href === path;
 
-    return(
+    return (
         <motion.button
             className={'pl-4 ' + (isActive ? 'text-yellow-400' : 'text-yellow-600')}
             initial={{paddingLeft: '0px', paddingRight: '24px'}}
@@ -40,22 +42,21 @@ function NavLink({text, href}: NavLinkProps) {
             <Link href={href}>&lt;{text}/&gt;</Link>
         </motion.button>
     );
-}
+};
 
-function Wrapper({text, indent, children}: WrapperProps){
-    const grayColor = 'text-gray-' + calculateGray(indent);
-    return(
+const Wrapper = ({text, indent, children}: WrapperProps) => {
+    return (
         <div className={'pl-4 flex flex-col items-start'}>
-            <span className={`${grayColor}`}>
+            <span className={`${getGrayColor(indent)}`}>
                 &lt;{text}&gt;
             </span>
             {children}
-            <span className={`${grayColor}`}>
+            <span className={`${getGrayColor(indent)}`}>
                 &lt;/{text}&gt;
             </span>
         </div>
     );
-}
+};
 
 export default function SideBar() {
     return (

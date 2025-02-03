@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {notoSansMono} from "@/app/ui/fonts";
-import SideBar from "@/app/ui/SideBar";
+import {roboto} from "@/app/ui/fonts";
+import NavMenu from "@/app/ui/components/NavMenu";
 
 export const metadata: Metadata = {
   title: "Matt Bos",
@@ -16,10 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansMono.className} antialiased flex h-screen w-full bg-dark-primary text-white`}
+        className={`${roboto.className} svg-background antialiased flex flex-col h-screen w-full bg-background-accent-2 text-text-gray-2`}
       >
-      <div className={'flex items-center pl-8 pr-24'}><SideBar/></div>
-        <main className={"flex flex-1"}>{children}</main>
+      <NavMenu />
+      <main className={"flex flex-1 pt-12"}>{children}</main>
       </body>
     </html>
   );
