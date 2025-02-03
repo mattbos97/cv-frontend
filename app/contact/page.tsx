@@ -1,5 +1,4 @@
 import Link from "next/link";
-import InfoMessage from "@/app/ui/components/InfoMessage";
 
 const Contact = () => {
     return(
