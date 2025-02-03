@@ -63,6 +63,8 @@ export default function SkillCard({name, level}: SkillCardProps) {
             className={`
             rounded-lg border-[1px] border-border-gray-2
             w-[350px] p-4 flex flex-col justify-around
+            bg-background-accent-1
+            m-4
             `}
             whileHover={{
                 scale: 1.05,

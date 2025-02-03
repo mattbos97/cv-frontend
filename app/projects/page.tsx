@@ -1,29 +1,29 @@
+import React from "react";
+import experiences from "@/app/lib/experience/experiences.json";
 import ExperienceCard from "@/app/ui/components/ExperienceCard";
-import experiences from '@/app/lib/experience/experiences.json'
-import InfoMessage from "@/app/ui/components/InfoMessage";
+import PageContainer from "@/app/ui/components/PageContainer";
 
 
-export default function Page() {
-    return (
-        <div className={'flex flex-col flex-1'}>
-            <div className={'flex justify-center items-center'}>
-                <InfoMessage message={'You can click any card to read more.'}/>
-            </div>
+const Page: React.FC = () => {
+    return(
+        <PageContainer pageTitle={'Work experience'}>
             <div
                 className={`
                 flex flex-col justify-center
             w-full 
             p-4
             rounded-lg`}>
-                {experiences.map(exp =>
+                {experiences.map((exp, index) =>
                     <ExperienceCard
-                        key={exp.company}
+                        key={index}
                         title={exp.title}
                         company={exp.company}
                         start={exp.start}
                         end={exp.end}
                         description={exp.description}/>)}
             </div>
-        </div>
+        </PageContainer>
     );
 }
+
+export default Page;

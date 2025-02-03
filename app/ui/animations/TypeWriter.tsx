@@ -58,7 +58,7 @@ const Cursor = ({isTyping}: {
 export interface TypeWriterProps {
     text: string,
     textColor?: 'text-text-primary' | 'text-text-secondary',
-    fontSize?: 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
+    fontSize?: 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl',
     isTyping?: boolean,
     onComplete?: () => void;
 }

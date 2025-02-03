@@ -1,8 +1,18 @@
 'use client'
-import Experience from '@/app/lib/Experience'
+import Experience from '@/app/lib/experience/Experience'
 import {motion} from 'motion/react';
 import {useState} from "react";
 import Button from "@/app/ui/components/Button";
+
+function ExperienceInfo(props: { title: string, company: string, start: string, end: string }) {
+    return <div className={"flex flex-row justify-between items-center space-x-8"}>
+        <div className={"flex flex-col space-y-2"}>
+            <span>{props.title}</span>
+            <span>{props.company}</span>
+            <span>{props.start} - {props.end}</span>
+        </div>
+    </div>;
+}
 
 export default function ExperienceCard(experience: Experience){
 
@@ -11,21 +21,19 @@ export default function ExperienceCard(experience: Experience){
 
     return(
         <motion.div
-            className={
-                "flex flex-col " +
-                "rounded-lg border-[1px] border-border-gray-1" +
-                " " +
-                "p-4 m-4"
-            }
+            className={`
+            flex flex-col 
+            rounded-lg border-[1px] border-border-gray-2
+            bg-background-accent-1 
+            p-4
+            cursor-pointer`}
+            onClick={toggleVariant}
         >
-            <div className={'flex flex-row justify-between items-center'}>
-                <div className={'flex flex-col space-y-2'}>
-                    <span>{experience.title}</span>
-                    <span>{experience.company}</span>
-                    <span>{experience.start} - {experience.end}</span>
-                </div>
-                <Button text={'Read more'} buttonType={'primary'} onClick={toggleVariant} />
-            </div>
+            <ExperienceInfo
+                title={experience.title}
+                company={experience.company}
+                start={experience.start}
+                end={experience.end}/>
             <motion.div
                 initial={'closed'}
                 animate={variant}
@@ -55,6 +63,7 @@ export default function ExperienceCard(experience: Experience){
                     }
                 }}
             >
+                <div className={'w-full h-px bg-border-gray-3'}/>
                 <motion.span
                     className={'whitespace-pre-wrap'}
                     variants={{
