@@ -1,0 +1,50 @@
+[
+  {
+    "name": "C#",
+    "level": "pro"
+  },
+  {
+    "name": ".NET Core",
+    "level": "pro"
+  },
+  {
+    "name": "ASP.NET",
+    "level": "beginner"
+  },
+  {
+    "name": "React",
+    "level": "intermediate"
+  },
+  {
+    "name": "TypeScript",
+    "level": "intermediate"
+  },
+  {
+    "name": "CSS",
+    "level": "intermediate"
+  },
+  {
+    "name": "Next.JS",
+    "level": "intermediate"
+  },
+  {
+    "name": "PostgreSQL",
+    "level": "intermediate"
+  },
+  {
+    "name": "C++",
+    "level": "intermediate"
+  },
+  {
+    "name": "Java",
+    "level": "intermediate"
+  },
+  {
+    "name": "spring-boot",
+    "level": "intermediate"
+  },
+  {
+    "name": "PowerBI",
+    "level": "beginner"
+  }
+]

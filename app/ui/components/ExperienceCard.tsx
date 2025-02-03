@@ -26,7 +26,9 @@ export default function ExperienceCard(experience: Experience){
             rounded-lg border-[1px] border-border-gray-2
             bg-background-accent-1 
             p-4
-            cursor-pointer`}
+            cursor-pointer
+            w-full
+            md:w-[60vw]`}
             onClick={toggleVariant}
         >
             <ExperienceInfo

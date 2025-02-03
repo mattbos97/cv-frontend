@@ -7,14 +7,14 @@ export default function Page() {
     return (
         <div className={'flex flex-col flex-1'}>
             <div className={'flex justify-center items-center'}>
-                <InfoMessage message={'You can click any card to read more.'}/>
+                <InfoMessage message={'Click on any card to read more.'}/>
             </div>
             <div
                 className={`
-                flex flex-col justify-center
-            w-full 
-            p-4
-            rounded-lg`}>
+                flex flex-col justify-start items-center
+                w-full 
+                p-4
+                rounded-lg`}>
                 {experiences.map(exp =>
                     <ExperienceCard
                         key={exp.company}

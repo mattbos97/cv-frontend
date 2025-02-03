@@ -3,12 +3,18 @@
     "title": "Predict performance",
     "for": "Prodrive technologies",
     "skills": ["C#", "PostgreSQL", "PowerBI"],
-    "description": ""
+    "description": "In a high-mix, low-volume Printed Circuit Board Assembly (PCBA) manufacturing environment, I designed and implemented a data-driven microservices architecture using C# and PostgreSQL to enhance test reliability and minimize production downtime.\n\nThe system collected real-time test results from manufacturing test machines and leveraged historical component performance data to predict potential testing issues for upcoming products. Specifically, it identified components prone to false calls, analyzed their historical misclassification patterns, and assessed the likelihood of similar occurrences in future production runs.\n\nBy integrating this predictive analysis into the workflow, test parameters could be proactively adjusted before production, reducing unnecessary test failures caused by optical variations, batch differences, or placement inconsistencies—without compromising product quality.\n\nThe insights generated were visualized in Power BI, providing test engineers with actionable data to optimize testing strategies where it mattered most. This preventive approach significantly improved test efficiency, reducing unnecessary downtime in a highly variable production environment."
   },
   {
     "title": "Documentation website",
     "for": "Prodrive technologies",
     "skills": ["React", "TypeScript", "CSS", "HTML"],
-    "description": ""
+    "description": "I designed and implemented an automated documentation system using C# and Bamboo to streamline the management of project documentation within a software development environment. This system seamlessly integrated with the CI/CD pipeline, scanning software repositories upon merging changes into the master branch to detect MDX files—extended Markdown documents used for project documentation.\n\nOnce an updated or new MDX file was identified, the system automatically uploaded it to an internally hosted React-based web platform. The MDX content was then processed and converted into static HTML pages, ensuring that project documentation remained easily accessible and up to date. Additionally, the platform featured a search functionality, enabling developers to efficiently locate relevant documentation. By keeping documentation alongside the codebase, this solution enhanced traceability and encouraged developers to maintain accurate and current project documentation."
+  },
+  {
+    "title": "Generate coverage reports",
+    "for": "Prodrive technologies",
+    "skills": ["C#"],
+    "description": "I developed an application for a PCBA manufacturing company that enables users to input a product number and generate a comprehensive test coverage report. The application integrates with test machines on the SMT (Surface Mount Technology) production line, analyzing which tests are being performed at this stage. By identifying gaps in test coverage, the tool helps ensure that untested components receive additional verification in later production steps. This solution enhances quality control and optimizes the overall testing strategy for improved product reliability."
   }
 ]

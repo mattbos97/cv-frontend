@@ -2,8 +2,7 @@
 import {motion, animate, useMotionValue, useTransform} from 'motion/react'
 import React, {useEffect} from 'react'
 
-type SkillLevel = 'beginner' | 'intermediate' | 'expert' | 'pro';
-const skillLevelToPercentage: Record<SkillLevel, number> = {
+const skillLevelToPercentage: Record<string, number> = {
     beginner: 25,
     intermediate: 50,
     expert: 75,
@@ -12,10 +11,10 @@ const skillLevelToPercentage: Record<SkillLevel, number> = {
 
 export interface SkillCardProps{
     name: string,
-    level: SkillLevel
+    level: string
 }
 
-function ProgressBar({skillLevel}: {skillLevel: SkillLevel}) {
+function ProgressBar({skillLevel}: {skillLevel: string}) {
     return (
         <div className={"w-full h-2 bg-interactive-accent-3 rounded-full"}>
             <motion.div
@@ -28,7 +27,7 @@ function ProgressBar({skillLevel}: {skillLevel: SkillLevel}) {
     );
 }
 
-function SkillLevelDescription({skillLevel}: {skillLevel: SkillLevel}) {
+function SkillLevelDescription({skillLevel}: {skillLevel: string}) {
     return (
         <div className={"w-full flex justify-between"}>
             <span className={"text-gray-400 text-xs"}>Skill level:
@@ -42,7 +41,7 @@ function SkillLevelDescription({skillLevel}: {skillLevel: SkillLevel}) {
     );
 }
 
-function Percentage({skillLevel}: {skillLevel: SkillLevel}){
+function Percentage({skillLevel}: {skillLevel: string}){
     const count = useMotionValue(0);
     const rounded = useTransform(() => Math.round(count.get()))
 
