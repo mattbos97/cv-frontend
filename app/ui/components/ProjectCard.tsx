@@ -16,6 +16,7 @@ const containerVariants: Variants = {
         padding: 0,
         height: 0,
         width: 0,
+        overflow: 'hidden',
         transition: {
             when: 'afterChildren',
             staggerDirection: -1
