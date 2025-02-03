@@ -2,7 +2,6 @@
 import Experience from '@/app/lib/experience/Experience'
 import {motion} from 'motion/react';
 import {useState} from "react";
-import Button from "@/app/ui/components/Button";
 
 function ExperienceInfo(props: { title: string, company: string, start: string, end: string }) {
     return <div className={"flex flex-row justify-between items-center space-x-8"}>
