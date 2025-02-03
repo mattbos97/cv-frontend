@@ -4,9 +4,11 @@ const Contact = () => {
     return(
         <div className={`
         flex flex-1
-        justify-center items-start`}>
+        justify-center items-start mt-8`}>
             <div className={`
-            bg-background-accent-1 rounded-lg p-4 space-y-4`}>
+            bg-background-accent-1 rounded-lg p-4 space-y-4
+            w-[90vw]
+            md:w-[60vw]`}>
                 <div>
                     <span className={'font-bold'}>Mobile: </span>
                     <Link className={'underline text-blue-500'} href={'tel:+61497506959'}>+61 497 506 959</Link>
