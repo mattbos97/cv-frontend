@@ -2,18 +2,19 @@
 import Experience from '@/app/lib/experience/Experience'
 import {motion} from 'motion/react';
 import {useState} from "react";
+import PlusCrossButton from "@/app/ui/components/PlusCrossButton";
 
 function ExperienceInfo(props: { title: string, company: string, start: string, end: string }) {
-    return <div className={"flex flex-row justify-between items-center space-x-8"}>
+    return (
         <div className={"flex flex-col space-y-2"}>
             <span>{props.title}</span>
             <span>{props.company}</span>
             <span>{props.start} - {props.end}</span>
         </div>
-    </div>;
+    );
 }
 
-export default function ExperienceCard(experience: Experience){
+export default function ExperienceCard(experience: Experience) {
 
     const [variant, setVariant] = useState<'open' | 'closed'>('closed');
     const toggleVariant = () => variant === 'open' ? setVariant('closed') : setVariant('open');
@@ -25,16 +26,18 @@ export default function ExperienceCard(experience: Experience){
             rounded-lg border-[1px] border-border-gray-2
             bg-background-accent-1 
             p-4
-            cursor-pointer
             w-full
             md:w-[60vw]`}
-            onClick={toggleVariant}
         >
-            <ExperienceInfo
-                title={experience.title}
-                company={experience.company}
-                start={experience.start}
-                end={experience.end}/>
+            <div className={"flex flex-row justify-between items-center px-4"}>
+                <ExperienceInfo
+                    title={experience.title}
+                    company={experience.company}
+                    start={experience.start}
+                    end={experience.end}/>
+                <PlusCrossButton style={{scale:1.5}} handleOnClick={toggleVariant}/>
+            </div>
+
             <motion.div
                 initial={'closed'}
                 animate={variant}
@@ -63,22 +66,22 @@ export default function ExperienceCard(experience: Experience){
                         }
                     }
                 }}
-            >
-                <div className={'w-full h-px bg-border-gray-3'}/>
-                <motion.span
-                    className={'whitespace-pre-wrap'}
-                    variants={{
-                        closed: {
-                            opacity: 0
-                        },
-                        open: {
-                            opacity: 1
-                        }
-                    }}
                 >
-                    {experience.description}
-                </motion.span>
-            </motion.div>
+                    <div className={'w-full h-px bg-border-gray-3'}/>
+                    <motion.span
+                        className={'whitespace-pre-wrap'}
+                        variants={{
+                            closed: {
+                                opacity: 0
+                            },
+                            open: {
+                                opacity: 1
+                            }
+                        }}
+                    >
+                        {experience.description}
+                    </motion.span>
+                </motion.div>
         </motion.div>
-    );
+);
 }

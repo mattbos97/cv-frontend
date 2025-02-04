@@ -7,7 +7,6 @@ import {
     Cross1Icon,
     HamburgerMenuIcon,
     HomeIcon,
-    PersonIcon,
     RocketIcon
 } from "@radix-ui/react-icons";
 import {AiOutlineExperiment} from "react-icons/ai";
@@ -21,11 +20,10 @@ interface NavMenuItem {
 
 const navItems: NavMenuItem[] = [
     { icon: <HomeIcon/>, text: 'Home', href: '/'},
-    { icon: <PersonIcon/>, text: 'About me', href: '/bio'},
-    { icon: <ChatBubbleIcon/>, text: 'Contact', href: '/contact'},
     { icon: <BackpackIcon/>, text: 'Work experience', href: '/experience'},
     { icon: <RocketIcon/>, text: 'Projects', href: '/projects'},
-    { icon: <AiOutlineExperiment/>, text: 'skills', href: '/skills'}
+    { icon: <AiOutlineExperiment/>, text: 'skills', href: '/skills'},
+    { icon: <ChatBubbleIcon/>, text: 'Contact', href: '/contact'},
 ]
 
 const NavMenu: React.FC = () => {

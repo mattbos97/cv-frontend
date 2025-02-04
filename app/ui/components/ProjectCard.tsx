@@ -1,6 +1,7 @@
 'use client'
 import {motion, Variants} from 'motion/react';
 import React, {useState} from "react";
+import PlusCrossButton from "@/app/ui/components/PlusCrossButton";
 
 const containerVariants: Variants = {
     open: {
@@ -47,17 +48,18 @@ const ProjectCard = (p: {projectTitle: string, projectFor: string, projectDescri
     return (
         <motion.div
             className={`
-            cursor-pointer
             bg-background-accent-1 
             rounded-lg border-2 border-border-gray-3
             my-8 p-4
             w-[90vw]
             md:w-[60vw]`}
-            onClick={toggleVariants}
         >
-            <div>
-                <h3>{p.projectTitle}</h3>
-                <span>for: <span>{p.projectFor}</span></span>
+            <div className={'flex flex-row justify-between items-center'}>
+                <div>
+                    <h3>{p.projectTitle}</h3>
+                    <span>for: <span>{p.projectFor}</span></span>
+                </div>
+                <PlusCrossButton style={{scale: 1.5}} handleOnClick={toggleVariants} />
             </div>
             <motion.div
                 initial={'closed'}

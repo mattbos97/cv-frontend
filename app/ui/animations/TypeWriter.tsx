@@ -1,11 +1,10 @@
 'use client'
-import {useEffect, useState} from "react";
+import {HTMLAttributes, useEffect, useState} from "react";
 import {animate, motion, useMotionValue, useTransform} from "motion/react";
 
-const Writer = ({text, onComplete, className}: {
+const Writer = ({text, onComplete}: {
     text: string,
-    onComplete: () => void,
-    className: string
+    onComplete: () => void
 }) => {
     const textIndex = useMotionValue(0)
     const textIndexRounded = useTransform(() => Math.round(textIndex.get()));
@@ -22,7 +21,7 @@ const Writer = ({text, onComplete, className}: {
     }, [textIndex, text, onComplete]);
 
     return (
-        <motion.div className={`${className}`}>
+        <motion.div>
             {textSlice}
         </motion.div>
     );
@@ -55,23 +54,18 @@ const Cursor = ({isTyping}: {
     );
 }
 
-export interface TypeWriterProps {
-    text: string,
-    textColor?: 'text-text-primary' | 'text-text-secondary',
-    fontSize?: 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl',
-    isTyping?: boolean,
-    onComplete?: () => void;
+interface Props extends HTMLAttributes<HTMLDivElement> {
+    text: string
 }
 
-export const TypeWriter = ({text, textColor, fontSize}: TypeWriterProps) => {
+export const TypeWriter = ({text, ...props}: Props) => {
     const [isTyping, setIsTyping] = useState(true);
     const handleTypingComplete = () => setIsTyping(false);
 
-    const style = [textColor, fontSize].join(' ');
 
     return (
-        <div>
-            <Writer text={text} onComplete={handleTypingComplete} className={style}/>
+        <div {...props}>
+            <Writer text={text} onComplete={handleTypingComplete}/>
             <Cursor isTyping={isTyping}/>
         </div>
     );

@@ -1,5 +1,5 @@
 import ExperienceCard from "@/app/ui/components/ExperienceCard";
-import experiences from '@/app/lib/experience/experiences.json'
+import experiences from '@/app/lib/data/experiences.json'
 import InfoMessage from "@/app/ui/components/InfoMessage";
 
 
@@ -7,7 +7,7 @@ export default function Page() {
     return (
         <div className={'flex flex-col flex-1'}>
             <div className={'flex justify-center items-center'}>
-                <InfoMessage message={'Click on any card to read more.'}/>
+                <InfoMessage message={'Click on the "+" icon to read more.'}/>
             </div>
             <div
                 className={`
