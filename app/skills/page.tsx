@@ -1,4 +1,4 @@
-import skills from '@/app/lib/skills/skills.json'
+import skills from '@/app/lib/data/skills.json'
 import SkillCard from "@/app/ui/components/SkillCard";
 
 export default function Page(){

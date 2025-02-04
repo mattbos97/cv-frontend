@@ -19,7 +19,7 @@ export default function RootLayout({
         className={`${roboto.className} svg-background antialiased flex flex-col h-screen w-full bg-background-accent-2 text-text-gray-2`}
       >
       <NavMenu />
-      <main className={"flex flex-1 pt-12"}>{children}</main>
+      <main className={"flex flex-1 pt-16"}>{children}</main>
       </body>
     </html>
   );
