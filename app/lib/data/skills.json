@@ -20,6 +20,10 @@
     "level": "intermediate"
   },
   {
+    "name": "HTML",
+    "level": "pro"
+  },
+  {
     "name": "CSS",
     "level": "intermediate"
   },
@@ -46,5 +50,13 @@
   {
     "name": "PowerBI",
     "level": "beginner"
+  },
+  {
+    "name": "Web development",
+    "level": "intermediate"
+  },
+  {
+    "name": "Object-Oriented programming",
+    "level": "pro"
   }
 ]

@@ -30,6 +30,11 @@ const NavMenu: React.FC = () => {
 
     const [variant, setVariant] = useState<'closed' | 'open'>('closed');
     const toggle = () => variant === 'closed' ? setVariant('open') : setVariant('closed');
+    const closeWhenSmallScreen = () => {
+        if (window.innerWidth < 768){
+            setVariant('closed');
+        }
+    }
 
     return(
         <>

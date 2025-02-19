@@ -14,7 +14,7 @@ const TextAndImage = (props: {text: string, imgSource: StaticImageData, imgAlt: 
 
             {/* Image container */}
             <div className={`
-            md:w-1/4 ml-2`}>
+            md:w-1/4 md:ml-2`}>
                 <Image className={'rounded-xl'} src={props.imgSource} alt={props.imgAlt} />
             </div>
         </div>
